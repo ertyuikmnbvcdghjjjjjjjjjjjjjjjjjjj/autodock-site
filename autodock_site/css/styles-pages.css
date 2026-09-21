@@ -1,0 +1,247 @@
+/* ==========================================================================
+   COUNTRY & SERVICE PAGES  (/germany, /poland, /czechia + подстраницы)
+   Использует токены и базовые классы основного styles.css
+   ========================================================================== */
+
+.nav-links { flex-wrap: wrap; }
+
+/* ---------- Hero ---------- */
+.page-hero {
+  background: linear-gradient(180deg, #e3f2fd 0%, #ffffff 100%);
+  padding: 55px 0 45px;
+  border-bottom: 1px solid var(--border-color);
+}
+.page-hero .main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.breadcrumb a { color: var(--secondary-color); font-weight: 600; }
+.breadcrumb a:hover { text-decoration: underline; }
+.page-hero h1 {
+  font-size: clamp(27px, 4.2vw, 42px);
+  color: var(--primary-dark);
+  max-width: 900px;
+  margin: 0;
+}
+.page-lead {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 780px;
+  margin: 0;
+}
+.page-hero .btn { padding: 14px 30px; margin-top: 6px; }
+
+/* ---------- Секции ---------- */
+.page-section { padding: 58px 0; }
+.page-section.alt {
+  background-color: var(--bg-card);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+.page-section h2 {
+  font-size: clamp(21px, 2.9vw, 31px);
+  color: var(--primary-dark);
+  margin-bottom: 16px;
+}
+.page-section p { margin-bottom: 14px; }
+.page-section p:last-child { margin-bottom: 0; }
+.eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+.section-lead { color: var(--text-muted); max-width: 780px; margin-bottom: 28px; }
+
+/* ---------- Интро услуги + чек-панель ---------- */
+.service-intro {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.check-panel {
+  list-style: none;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  gap: 12px;
+}
+.check-panel li { position: relative; padding-left: 26px; }
+.check-panel li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 2px solid var(--secondary-color);
+}
+
+/* ---------- Шаги ---------- */
+.country-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  gap: 20px;
+}
+.country-step {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+.country-step > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: var(--text-light);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.country-step h3 { font-size: 1rem; margin-bottom: 8px; color: var(--primary-dark); }
+.country-step p { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
+
+/* ---------- Карточки контента ---------- */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.page-card { border-radius: var(--radius-lg); padding: 28px; }
+.page-card h2 { font-size: 1.3rem; }
+.info-list { list-style: none; display: grid; gap: 10px; margin-bottom: 16px; }
+.info-list li { position: relative; padding-left: 22px; }
+.info-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+.source-note, .legal-note { font-size: 0.85rem; color: var(--text-muted); }
+.source-note a { color: var(--secondary-color); font-weight: 600; text-decoration: underline; }
+.legal-note.compact {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border-color);
+}
+
+/* ---------- FAQ ---------- */
+.faq-list { display: grid; gap: 12px; max-width: 900px; }
+.faq-list details {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  box-shadow: var(--shadow-sm);
+}
+.faq-list summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--primary-dark);
+  font-family: var(--font-display);
+}
+.faq-list details[open] summary { margin-bottom: 10px; }
+.faq-list p { margin: 0; color: var(--text-muted); }
+
+/* ---------- Перелинковка по процедурам ---------- */
+.topic-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+.topic-link-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.topic-link-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--secondary-color);
+}
+.topic-link-card > span {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+}
+.topic-link-card h3 { font-size: 1.05rem; color: var(--primary-dark); margin: 0; }
+.topic-link-card p { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
+.topic-link-card a {
+  margin-top: auto;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--secondary-color);
+}
+.topic-link-card a::after { content: " →"; }
+
+/* ---------- Блок "Права за рубежом" на главной ---------- */
+.abroad-section {
+  padding: 70px 0;
+  background-color: var(--bg-body);
+  border-top: 1px solid var(--border-color);
+}
+.abroad-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.abroad-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.abroad-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--secondary-color);
+}
+.abroad-card h3 { font-size: 1.15rem; color: var(--primary-dark); margin: 0; }
+.abroad-card p { font-size: 0.92rem; color: var(--text-muted); margin: 0; }
+.abroad-card ul { list-style: none; display: grid; gap: 6px; font-size: 0.88rem; }
+.abroad-card ul a { color: var(--secondary-color); font-weight: 600; }
+.abroad-card ul a:hover { text-decoration: underline; }
+
+/* ---------- Мобильные ---------- */
+@media (max-width: 860px) {
+  .service-intro, .content-grid { grid-template-columns: 1fr; }
+  .page-section { padding: 44px 0; }
+  .page-hero { padding: 40px 0 34px; }
+}
